@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStore", "SmartStore\SmartStore.csproj", "{8200E44C-5ED3-4F60-BA61-2FE850FE414F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8200E44C-5ED3-4F60-BA61-2FE850FE414F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8200E44C-5ED3-4F60-BA61-2FE850FE414F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8200E44C-5ED3-4F60-BA61-2FE850FE414F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8200E44C-5ED3-4F60-BA61-2FE850FE414F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F885B58-7F13-4F5B-8E90-BC65A4DD0CF1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+﻿{
+  "server": "localhost",
+  "port": 5432,
+  "database": "smartstoredb",
+  "user": "postgres",
+  "password": "postgres"
+}
