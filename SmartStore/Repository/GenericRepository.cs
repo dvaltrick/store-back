@@ -11,7 +11,7 @@ namespace SmartStore.Repository
     public class GenericRepository<TEntity> : IGenericRepository<TEntity>
         where TEntity : BaseEntity
     {
-        private MyAppContext _db;
+        protected MyAppContext _db;
         public GenericRepository() {
             _db = new MyAppContext();
         }
@@ -28,30 +28,22 @@ namespace SmartStore.Repository
             }
         }
 
-        public virtual void Delete(Guid id)
+        public virtual void Delete(string id)
         {
-            using (var db = new MyAppContext())
-            {
-                var entity = GetById(id);
-                db.Set<TEntity>().Remove(entity);
-                db.SaveChanges();
-            }
+            var toDeleteId = Guid.Parse(id);
+            var entity = GetById(toDeleteId);
+            _db.Set<TEntity>().Remove(entity);
+            _db.SaveChanges();
         }
 
         public virtual IQueryable<TEntity> GetAll()
         {
-            //using (var db = new MyAppContext())
-            //{
-                return _db.Set<TEntity>().AsNoTracking();
-            //}
+            return _db.Set<TEntity>().AsNoTracking();
         }
 
         public virtual TEntity GetById(Guid id)
         {
-            using (var db = new MyAppContext())
-            {
-                return db.Set<TEntity>().AsNoTracking().FirstOrDefault(e => e.Id.Equals(id));
-            }
+            return _db.Set<TEntity>().AsNoTracking().FirstOrDefault(e => e.Id.Equals(id));
         }
 
         public virtual TEntity Update(TEntity entity)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace SmartStore.Models
         public String Name { get; set; }
         public String Icon { get; set; }
         public Guid? ParentId { get; set; }
+
+        [JsonIgnore]
         public Category Parent { get; set; }
         public IEnumerable<Category> Children { get; set; }
         public IEnumerable<Item> Items { get; set; }

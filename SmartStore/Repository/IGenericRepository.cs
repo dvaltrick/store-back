@@ -17,6 +17,6 @@ namespace SmartStore.Repository
 
         TEntity Update(TEntity entity);
 
-        void Delete(Guid id);
+        void Delete(string id);
     }
 }

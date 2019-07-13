@@ -13,13 +13,12 @@ namespace SmartStore.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController
+    public class SpecificationController
     {
-        // POST api/values
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<Category> Post([FromBody] Category toSave,
-                                           [FromServices] CategoryRepository dao)
+        public ActionResult<Specification> Post([FromBody] Specification toSave,
+                                           [FromServices] SpecificationRepository dao)
         {
             try
             {
@@ -33,8 +32,8 @@ namespace SmartStore.Controllers
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<Category> Put([FromBody] Category toSave,
-                                           [FromServices] CategoryRepository dao)
+        public ActionResult<Specification> Put([FromBody] Specification toSave,
+                                           [FromServices] SpecificationRepository dao)
         {
             try
             {
@@ -48,7 +47,7 @@ namespace SmartStore.Controllers
 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Delete([FromServices] CategoryRepository dao, string toDelete)
+        public ActionResult Delete([FromServices] SpecificationRepository dao, string toDelete)
         {
             try
             {

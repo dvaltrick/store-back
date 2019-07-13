@@ -1,4 +1,6 @@
-﻿using SmartStore.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SmartStore.DB;
+using SmartStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,15 @@ namespace SmartStore.Repository
         public override Category Create(Category entity)
         {
             return base.Create(entity);
+        }
+
+        public override IQueryable<Category> GetAll()
+        {
+            var categories = base._db.Categories
+                .Include(c => c.Children)
+                .Where<Category>(c => c.ParentId == null);
+
+            return categories;
         }
     }
 }
